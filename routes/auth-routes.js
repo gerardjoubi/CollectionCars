@@ -65,6 +65,7 @@ authRoutes.get("/login", (req, res, next) => {
     failureFlash: true,
     passReqToCallback: true
   }));
+const router = require('./index.js')
   //------------corresponding functionality
 //add the route------------
 authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
@@ -77,20 +78,5 @@ authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
   });
 
 
-  //--------Creat a car ___________
-router.get("/form_car",(req,res,next)=>{
-  res.render("form_car.hbs")
-});
-router.post("/dashboard/car/",(req,res,next)=>{
-  const {firstName, description}= req.body 
-  Car.create(
-    { firstName, description }
-  )
-  .then (carDoc =>{
-    res.redirect("/names")
-    console.log(carDoc)
-  })
-  .catch(err =>next(err))
-});
-//---------
+  
 module.exports = authRoutes;

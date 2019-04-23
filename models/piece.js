@@ -13,6 +13,6 @@ const pieceSchema = new Schema({
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }
 });
 
-const Piece = mongoose.model("Car", pieceSchema);
+const Piece = mongoose.model("Piece", pieceSchema);
 
 module.exports = Piece;

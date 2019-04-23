@@ -14,7 +14,8 @@ const session = require("express-session");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-
+///--------------
+//---
 
 ////---------------------------------
 mongoose
@@ -57,17 +58,13 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 
-const index = require('./routes/index');
-app.use('/', index);
-
-const listener = app.listen(process.env.PORT, () => {
-  console.log("app started at http://localhost:" + listener.address().port);
-});
 
 // Routes
 const authRoutes = require("./routes/auth-routes");
 app.use('/', authRoutes);
-
+///////////////////
+////app.use('/',apiCar);
+//////////////////////////////
 // configure the middleware-----------
 app.use(session({
   secret: "our-passport-local-strategy-app",
@@ -128,9 +125,22 @@ passport.use(new LocalStrategy({
 
 }
 ));
+// app.use("/api/car/", apiCar.router);
 ///failureFlash
 authRoutes.get("/login", (req, res, next) => {
   res.render("auth/login", { "message": req.flash("error") });
 });
 ////
+
+const index = require('./routes/index');
+app.use('/', index);
+const apiCar = require('./routes/api_car');
+app.use('/', apiCar);
+const apiPiece = require('./routes/api_piece');
+app.use('/', apiPiece);
+
+// const listener = app.listen(process.env.PORT, () => {
+//   console.log("app started at http://localhost:" + listener.address().port);
+// });
+
 module.exports = app;
