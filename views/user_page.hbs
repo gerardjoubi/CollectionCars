@@ -1,3 +1,93 @@
 <h3>{{userDoc.username}}</h3>
-<p><a href="form_cars"></a>
-<a href="form_piece"></a></p>
+<p><a href="/index">Logo</a>
+  <button id="create-car-form">Form Car</button>
+  <button id="create-piece-form">Form Piece</button></p>
+<h4>Affichage all cars and pieces for one user</h4>
+
+<ul>
+  {{#each cars}}
+  <li>
+    {{this.model}}
+  </li>
+  {{/each}}
+</ul>
+
+<h4>Pieces</h4>
+
+<ul>
+  <li>{{pieceData.pieceMarque}}</li>
+  <li>{{pieceData.model}}</li>
+  <li>{{pieceData.genre}}</li>
+  <li>{{pieceData.year}}</li>
+  <li>{{pieceData.descriptif}}</li>
+</ul>
+
+<!-- The Modal -->
+<div id="modal-car" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="close-car" class="close">&times;</span>
+    <h2 class="title">Create a new Car</h2>
+
+    <form method="post" action="/car" id="form_create_car" class="form">
+      <label for="marque">Marque</label>
+      <input id="marque" type="text" value="foo" name="carMarque" required>
+      <label for="model">Model</label>
+      <input id="model" type="text" value="bar" name="model" required>
+      <label for="color">color</label>
+      <input id="color" type="text" value="bar" name="color" required>
+
+      <label for="year">Year</label>
+      <input id="year" type="number" value="1937" name="year" required>
+
+      <label for="descriptif">Descriptif</label>
+      <input id="descriptif" type="number" value="special model" name="descriptif" required>
+
+      <label for="image">Image</label>
+      <input id="image" type="file" value="image" name="imag"></input>
+
+      <label for="image">Owner</label>
+      <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
+      <button id="btn_create_user" class="btn">Create</button>
+    </form>
+  </div>
+
+</div>
+
+
+<!-- The Modal -->
+<div id="modal-piece" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="close-piece" class="close">&times;</span>
+    <h2 class="title">Create a new Piece</h2>
+
+    <form method="post" action="/piece" id="form_create_piece" class="form">
+      <label for="marque">Piece Marque</label>
+      <input id="marque" type="text" value="foo" name="pieceMarque" required>
+
+      <label for="model">Model</label>
+      <input id="model" type="text" value="foo" name="model" required>
+
+      <label for="genre">Genre</label>
+      <input id="genre" type="text" value="bar" name="genre" required>
+
+      <label for="year">Year</label>
+      <input id="year" type="number" value="1998" name="year" required>
+
+      <label for="descriptif">Descriptif</label>
+      <input id="descriptif" type="number" value="38" name="descriptif" required>
+
+      <label for="image">Image</label>
+      <input id="image" type="file" value="image" name="imag"></input>
+
+      <label for="image">Owner</label>
+      <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
+      <button id="btn_create_user" class="btn">Create</button>
+    </form>
+
+  </div>
+
+</div>

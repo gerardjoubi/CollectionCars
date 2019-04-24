@@ -66,12 +66,6 @@ authRoutes.post("/login", passport.authenticate("local", {
     passReqToCallback: true
   }));
 
-authRoutes.get("/user_page/:id", (req,res,next) => {
-  User.findById(req.params.id).then(userData => {
-    console.log(userData)
-    res.render("user_page.hbs", { userData })
-  }).catch(err => console.log(err))
-})
   //------------corresponding functionality
 
 //add the route------------
