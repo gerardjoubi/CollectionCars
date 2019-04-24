@@ -1,5 +1,5 @@
 <h3>{{userDoc.username}}</h3>
-<p><a href="/index">Logo</a>
+<p><a href="/">Acceuille Logo</a>
   <button id="create-car-form">Form Car</button>
   <button id="create-piece-form">Form Piece</button></p>
 <h4>Affichage all cars and pieces for one user</h4>
@@ -15,11 +15,11 @@
 <h4>Pieces</h4>
 
 <ul>
-  <li>{{pieceData.pieceMarque}}</li>
-  <li>{{pieceData.model}}</li>
-  <li>{{pieceData.genre}}</li>
-  <li>{{pieceData.year}}</li>
-  <li>{{pieceData.descriptif}}</li>
+  {{#each pieces}}
+  <li>
+    {{this.model}}
+  </li>
+  {{/each}}
 </ul>
 
 <!-- The Modal -->
