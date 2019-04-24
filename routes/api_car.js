@@ -1,15 +1,12 @@
 const express = require("express");
 const router = new express.Router();
 const carModel = require("../models/car");
-
+const userModel = require("../models/users");
 // ------------------------------------------------------
-// creat car 
-// -------------------------------------------------------
-
+// ------------------creat car-------------------
 router.get("/form_car",(req,res,next)=>{
   res.render("form_car.hbs")
 });
-
 router.post("/car",(req,res,next)=>{
   // const {carModel, model,color,year,descriptif,imag}= req.body 
   carModel.create(req.body)
@@ -19,5 +16,33 @@ router.post("/car",(req,res,next)=>{
   })
   .catch(err =>next(err))
 });
+//--------------Get user Details----------
+router.get("/user_page/:id",(req,res,next)=>{
+  console.log(req.params.id)
+  userModel.findById(req.params.id)
+  .then (userDoc =>{
+    console.log(userDoc);
+    res.render("user_page.hbs",{ userDoc })
+  })
+  .catch(err => next(err))
+});
+module.exports = router;
+//--------------Get car data----------
+router.get("/dashboard_car",(req,res,next)=>{
+  carModel.find()
+  .then (carData =>{
+    console.log(carData);
+    res.render("dashboard_car.hbs",{ carData })
+  })
+  .catch(err => next(err))
+});
 
+router.get("/",(req,res,next)=>{
+  carModel.find()
+  .then(carData =>{
+    console.log(carData);
+    res.render("index.hbs",{ carData })
+  })
+  .catch(err => next(err))
+});
 module.exports = router;

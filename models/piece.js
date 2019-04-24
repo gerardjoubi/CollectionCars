@@ -7,7 +7,11 @@ const pieceSchema = new Schema({
   genre:String,
   year:Number,
   descriptif:String,
-  imag:String
+  imag:String,
+  ownerId: {
+    type: Schema.Types.ObjectId,
+    ref: "User"
+  }
 }, 
 {
   timestamps: { createdAt: "created_at", updatedAt: "updated_at" }

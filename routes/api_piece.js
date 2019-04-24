@@ -19,5 +19,24 @@ router.post("/piece",(req,res,next)=>{
   })
   .catch(err =>next(err))
 });
+//--------------Get user Details----------
+router.get("/user_page/:id",(req,res,next)=>{
+  console.log(req.params.id)
+  userModel.findById(req.params.id)
+  .then (userDoc =>{
+    console.log(userDoc);
+    res.render("user_page.hbs",{ userDoc })
+  })
+  .catch(err => next(err))
+});
+//--------------Get Piece data----------
+router.get("/dashboard_piece",(req,res,next)=>{
+  pieceModel.find()
+  .then (pieceData =>{
+    console.log(pieceData);
+    res.render("dashboard_piece.hbs",{ pieceData })
+  })
+  .catch(err => next(err))
+});
 
 module.exports = router;

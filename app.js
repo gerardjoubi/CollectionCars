@@ -45,6 +45,7 @@ app.use(require('node-sass-middleware')({
   sourceMap: true
 }));
 
+hbs.registerPartials(path.join(__dirname, "views", "partials"))
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -138,6 +139,8 @@ const apiCar = require('./routes/api_car');
 app.use('/', apiCar);
 const apiPiece = require('./routes/api_piece');
 app.use('/', apiPiece);
+
+
 
 // const listener = app.listen(process.env.PORT, () => {
 //   console.log("app started at http://localhost:" + listener.address().port);

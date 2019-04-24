@@ -59,14 +59,21 @@ authRoutes.get("/login", (req, res, next) => {
     res.render("auth/login");
   });
   
-  authRoutes.post("/login", passport.authenticate("local", {
-    successRedirect: "/",
+authRoutes.post("/login", passport.authenticate("local", {
+    successRedirect: "/user_page/" + User._id,
     failureRedirect: "/login",
     failureFlash: true,
     passReqToCallback: true
   }));
-const router = require('./index.js')
+
+authRoutes.get("/user_page/:id", (req,res,next) => {
+  User.findById(req.params.id).then(userData => {
+    console.log(userData)
+    res.render("user_page.hbs", { userData })
+  }).catch(err => console.log(err))
+})
   //------------corresponding functionality
+
 //add the route------------
 authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
     res.render("private", { user: req.user });
@@ -77,6 +84,8 @@ authRoutes.get("/private-page", ensureLogin.ensureLoggedIn(), (req, res) => {
     res.redirect("/login");
   });
 
+
+  const router = require('./index.js')
 
   
 module.exports = authRoutes;
