@@ -1,36 +1,233 @@
+
+
+/*///////////////////////////////////////////////////////*/
+/*///////////////// DEFAULT SETTINGS ////////////////////*/
+/*///////////////////////////////////////////////////////*/
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/*///////////////////////////////////////////////////////*/
+/*////////////////// GENERAL SETTINGS ///////////////////*/
+/*///////////////////////////////////////////////////////*/
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
 a {
-  color: #00B7FF;
+  color: #00B7FF; 
+  text-decoration: none;
 }
 
+/*///////////////////////////////////////////////////////*/
+/*///////////////////// NAV  SETTINGS ///////////////////*/
+/*///////////////////////////////////////////////////////*/
 
-// ============================================= MODAL ===========================================
+.main_navigation_bar{
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: red;
+}
+
+.nav_Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo_Container{
+  background-color: green;
+  width: 180px;
+  height: 100%;
+}
+
+.login_bar{
+  display: flex;
+  align-items: center;
+  width: 115px;
+  justify-content: space-around;
+  padding-right: 20px;
+} 
+
+.log_button{
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.log_button:hover{
+  background-color: orange;
+}
+
+/*///////////////////////////////////////////////////////*/
+/*/////////////////// FOOTER  SETTINGS //////////////////*/
+/*///////////////////////////////////////////////////////*/
+
+footer{
+  background-color: black;
+  color: white;
+  height: 75px;
+  display: flex;
+  position: relative;
+}
+
+.footer_Container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+/*///////////////////////////////////////////////////////*/
+/*//////////////// SIGN UP FORM SETTINGS ////////////////*/
+/*///////////////////////////////////////////////////////*/
+
+#section_Log_Container{
+  display: flex;
+  flex-direction: column;
+  width: 64%;
+  height: 100%;
+  margin: 50px auto;
+  align-items: center;
+}
+
+.outline_Container{
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(211, 211, 211, 0.6);
+  border-radius: 25px;
+  align-items: center;
+}
+
+#form-container{
+  margin: 20px;
+}
+
+label {
+  color: #B4886B;
+  font-weight: bold;
+  display: block;
+  width: 150px;
+  float: left;
+  padding-top: 5px;
+  }
+
+input{
+  width: 180px;
+  height: 25px;
+  border: 1px solid;
+  border-radius: 0.3rem;
+  margin-bottom: 8px;
+}
+
+.input_Container{
+  margin: 20px;
+}
+
+.log_Title{
+  margin: 20px;
+}
+
+.lower_Signup{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom_User_btn {
+  margin: 20px auto;
+	-moz-box-shadow: 0px 1px 0px 0px #fff6af;
+	-webkit-box-shadow: 0px 1px 0px 0px #fff6af;
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+	background:-moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:-ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23',GradientType=0);
+	background-color:#ffec64;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.custom_User_btn:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+	background:-moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:-ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+	background:linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
+	background-color:#ffab23;
+}
+.custom_User_btn:active {
+	position:relative;
+	top:1px;
+}
+
+.login_submit{
+  padding: 0;
+  width: 100px;
+}
+/*///////////////////////////////////////////////////////*/
+/*//////////////// LOG IN FORM SETTINGS /////////////////*/
+/*///////////////////////////////////////////////////////*/
+
+
+
+/*///////////////////////////////////////////////////////*/
+/*/////////////////// MODAL  SETTINGS ///////////////////*/
+/*///////////////////////////////////////////////////////*/
+
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */ 
 }
 
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
+  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
+  /* Could be more or less, depending on screen size */ 
 }
 
 /* The Close Button */
@@ -38,12 +235,15 @@ a {
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold;
+  font-weight: bold; 
 }
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer;
+  cursor: pointer; 
 }
+
+
+/*# sourceMappingURL=style.css.map */

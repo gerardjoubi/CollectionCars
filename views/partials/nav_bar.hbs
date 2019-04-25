@@ -1,0 +1,17 @@
+<section class="main_navigation_bar">
+    <div class="nav_Container">
+        <nav>
+            <a href="/">Home</a>
+            {{#unless isLoggedIn}}
+            <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+            {{/unless}}
+            {{#if isLoggedIn}}
+            <a href="/user_page">Profile</a>
+            <a href="/logout">Logout</a>
+            {{/if}}
+        </nav>
+    </div>
+
+
+</section>

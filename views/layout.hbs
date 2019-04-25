@@ -1,6 +1,7 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,16 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
-
 <body>
-  <nav>
-    <a href="/">Home</a>
-    {{#unless isLoggedIn}}
-    <a href="/login">Login</a>
-    <a href="/signup">Signup</a>
-    {{/unless}}
-    {{#if isLoggedIn}}
-    <a href="/user_page">Profile</a>
-    <a href="/logout">Logout</a>
-    {{/if}}
-  </nav>
+
+  {{>nav_bar}}
+
+
   {{{body}}}
+
+
+  {{>footer}}
 
   <script src="/javascripts/script.js"></script>
 </body>
-
 </html>
