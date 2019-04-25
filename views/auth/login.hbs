@@ -1,18 +1,26 @@
-<h2>Login</h2>
+<section id="section_Log_Container">
+  <div class="outline_Container">
+    <h2 class="log_Title">Login</h2>
+    <form action="/login" method="POST" id="form-container">
+      <div class="input_Container">
+        <label for="username">Username:</label>
+        <input type="text" name="username">
+      </div>
+      <div class="input_Container">
+        <label for="password">Password:</label>
+        <input type="password" name="password">
+      </div>
+      {{#if message}}
+        <div class="error-message">{{ message }}</div>
+      {{/if}}
 
-<form action="/login" method="POST">
-  <div>
-    <label for="username">Username:</label>
-    <input type="text" name="username">
+      <div class="lower_Signup">
+          <input class="custom_User_btn login_submit" type="submit" value="Log In">
+          <p class="account-message">
+            You do not have an account ? 
+            <a href="/signup">sign up here</a>
+          </p>
+        </div>
+    </form>
   </div>
-  <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
-  </div>
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <div>
-    <input type="submit" value="Log In">
-  </div>
-</form>
+</section>
