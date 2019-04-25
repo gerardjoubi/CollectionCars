@@ -6,15 +6,16 @@ const carModel = require("./../models/car");
 const pieceModel = require("./../models/piece");
 //--------------Get user Details----------
 
-profileRoute.get("/user_page", secure.ensureLoggedIn(), (req, res, next) => {
+profileRoute.get("/user_page/", secure.ensureLoggedIn(), (req, res, next) => {
+  console.log("id ?", req.user._id);
   userModel
     .findById(req.user._id)
     .then(userDoc => {
-      console.log(userDoc);
+      // console.log(userDoc);
       carModel.find({ ownerId: userDoc._id }).then(cars => {
-        console.log(cars);
+        console.log(cars, "cars");
         pieceModel.find({ ownerId: userDoc._id }).then(pieces => {
-          console.log(pieces);
+          // console.log(pieces);
           res.render("user_page.hbs", { userDoc, cars, pieces });
         });
       });

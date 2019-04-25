@@ -1,14 +1,16 @@
 <h1>{{title}}</h1>
-<p>Welcome to {{title}}</p> 
-<a href="./dashboard_piece">All pieces</a>
+<p>Welcome to {{title}}</p>
+<a href="/dashboard_piece">All pieces</a>
 
 <h2>Toutes les voitures:</h2>
+
 {{#each carData}}
 <ul>
-<li>{{this.carMarque}}</li>
-<li>{{this.model}}</li>
-<li>{{this.color}}</li>
-<li>{{this.year}}</li>
-<li>{{this.descriptif}}</li>
+  <li><img src="{{this.imag}}" alt="avatar"></li>
+  <li>{{this.carMarque}}</li>
+  <li>{{this.model}}</li>
+  <li>{{this.color}}</li>
+  <li>{{this.year}}</li>
+  <li>{{this.descriptif}}</li>
 </ul>
 {{/each}}

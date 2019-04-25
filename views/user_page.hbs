@@ -3,7 +3,7 @@
 <button id="create-piece-form">Form Piece</button></p>
 <h4>Affichage all cars and pieces for one user</h4>
 
-<ul>
+<ul>CARS
   {{#each cars}}
   <li>
     <p>Marque de la voiture : {{this.carMarque}}</p>
@@ -34,7 +34,7 @@
     <span id="close-car" class="close">&times;</span>
     <h2 class="title">Create a new Car</h2>
 
-    <form method="post" action="/car" id="form_create_car" class="form">
+    <form method="post" enctype="multipart/form-data" action="/car" id="form_create_car" class="form">
       <label for="marque">Marque</label>
       <input id="marque" type="text" value="foo" name="carMarque" required>
       <label for="model">Model</label>
@@ -46,7 +46,7 @@
       <input id="year" type="number" value="1937" name="year" required>
 
       <label for="descriptif">Descriptif</label>
-      <input id="descriptif" type="number" value="special model" name="descriptif" required>
+      <input id="descriptif" type="textarea" value="super descriptif" name="descriptif" required>
 
       <label for="image">Image</label>
       <input id="image" type="file" value="image" name="imag"></input>
@@ -58,15 +58,13 @@
   </div>
 
 </div>
-
-
 <!-- The Modal -->
 <div id="modal-piece" class="modal">
-
   <!-- Modal content -->
   <div class="modal-content">
     <span id="close-piece" class="close">&times;</span>
     <h2 class="title">Create a new Piece</h2>
+
 
     <form method="post" action="/piece" id="form_create_piece" class="form">
       <label for="marque">Piece Marque</label>
@@ -82,14 +80,20 @@
       <input id="year" type="number" value="1998" name="year" required>
 
       <label for="descriptif">Descriptif</label>
-      <input id="descriptif" type="number" value="38" name="descriptif" required>
-
-      <label for="image">Image</label>
-      <input id="image" type="file" value="image" name="imag"></input>
+      <input id="descriptif" type="textarea" value="" name="descriptif" required>
+      <label for="imag">imag </label>
+      {{!-- the name comes from the index.js file --}}
+      {{!-- type file is needed for it to work --}}
+      <input id="imag" type="file" name="imag"></input>
 
       <label for="image">Owner</label>
       <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
       <button id="btn_create_user" class="btn">Create</button>
+
+
+
+
+
     </form>
 
   </div>

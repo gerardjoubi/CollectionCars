@@ -12,7 +12,7 @@ body {
   font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
   text-decoration: none; }
 
 /*///////////////////////////////////////////////////////*/
@@ -89,7 +89,7 @@ footer {
   margin: 20px; }
 
 label {
-  color: #B4886B;
+  color: #b4886b;
   font-weight: bold;
   display: block;
   width: 150px;
@@ -210,5 +210,8 @@ input {
   cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */
+img {
+  height: 100px;
+  width: 100px; }
 
 /*# sourceMappingURL=style.css.map */
