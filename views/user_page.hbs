@@ -2,29 +2,31 @@
 <button id="create-car-form">Form Car</button>
 <button id="create-piece-form">Form Piece</button></p>
 <h4>Affichage all cars and pieces for one user</h4>
-
-<ul>CARS
+<h1>CARS</h1>
+<ul>
   {{#each cars}}
   <li>
-    <p>Marque de la voiture : {{this.carMarque}}</p>
-    <p>Model : {{this.model}}</p>
-    <p>Annee : {{this.year}}</p>
     <p>
-
-    </p>
-
-    <a href="/delete/{{_id}}">Delete x</a>
+      <p><img src="{{this.imag}}" alt="avatar"></p>
+      <p>Marque de la voiture : {{this.carMarque}}<br>
+        Model : {{this.model}}<br>
+        Annee : {{this.year}}</p>
+      <p><a href="/delete/{{_id}}">Delete x</a></p>
   </li>
   {{/each}}
 </ul>
 
-<h4>Pieces</h4>
+<h1>Pieces</h1>
 
 <ul>
   {{#each pieces}}
   <li>
-    {{this.model}}
-    <a href="/deletePiece/{{_id}}">Delete x</a>
+    <p><img src="{{this.imag}}" alt="avatar"></p>
+    <p>Piece Marque : {{this.pieceMarque}}</p>
+    <p>Model : {{this.model}}<br>
+      Year : {{this.year}}<br>
+      Descriptif : {{this.descriptif}}</p>
+    <p><a href="/deletePiece/{{_id}}">Delete x</a></p>
   </li>
   {{/each}}
 </ul>
@@ -48,13 +50,20 @@
       <label for="year">Year</label>
       <input id="year" type="number" value="1937" name="year" required>
 
-      <label for="descriptif">Descriptif</label>
-      <input id="descriptif" type="textarea" value="super descriptif" name="descriptif" required>
+      <label for="descriptif">Tell us your descriptif :</label>
+
+      <textarea id="descriptif" name="descriptif" rows="5" cols="33">
+IMPORTANT : 
+TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
+MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
+NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
+Spécialiste.
+</textarea>
 
       <label for="image">Image</label>
       <input id="image" type="file" value="image" name="imag"></input>
 
-      <label for="image">Owner</label>
+      <label for="image"></label>
       <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
       <button id="btn_create_user" class="btn">Create</button>
     </form>
@@ -82,14 +91,22 @@
       <label for="year">Year</label>
       <input id="year" type="number" value="1998" name="year" required>
 
-      <label for="descriptif">Descriptif</label>
-      <input id="descriptif" type="textarea" value="" name="descriptif" required>
-      <label for="imag">imag </label>
+      <label for="descriptif">Tell us your descriptif :</label>
+
+      <textarea id="descriptif" name="descriptif" rows="5" cols="33">
+IMPORTANT : 
+TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
+MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
+NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
+Spécialiste.
+</textarea>
+      <label for="image">Image</label>
+      <input id="image" type="file" value="image" name="imag"></input>
       {{!-- the name comes from the index.js file --}}
       {{!-- type file is needed for it to work --}}
-      <input id="imag" type="file" name="imag"></input>
 
-      <label for="image">Owner</label>
+
+      <label for="image"></label>
       <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
       <button id="btn_create_user" class="btn">Create</button>
 

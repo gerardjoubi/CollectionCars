@@ -18,7 +18,6 @@ const fileUploader = require("../config/cloudinaryConfig");
 //     })
 //     .catch(err => next(err));
 // });
-
 // router.get("/form_car",(req,res,next)=>{
 //   res.render("form_car.hbs")
 // });

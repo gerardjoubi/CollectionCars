@@ -4,13 +4,15 @@
 
 <h2>Toutes les pieces</h2>
 
-{{#each pieceData}}
 <ul>
-  <li><img src="{{this.imag}}" alt="avatar"></li>
-  <li>{{this.pieceMarque}}</li>
-  <li>{{this.model}}</li>
-  <li>{{this.genre}}</li>
-  <li>{{this.year}}</li>
-  <li>{{this.descriptif}}</li>
+  {{#each pieceData}}
+  <li>
+    <p><img src="{{this.imag}}" alt="avatar"></p>
+    <p>Piece Marque : {{this.pieceMarque}}</p>
+    <p>Model : {{this.model}}<br>
+      Year : {{this.year}}<br>
+      Descriptif : {{this.descriptif}}</p>
+
+  </li>
+  {{/each}}
 </ul>
-{{/each}}

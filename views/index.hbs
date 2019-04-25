@@ -4,13 +4,15 @@
 
 <h2>Toutes les voitures:</h2>
 
-{{#each carData}}
 <ul>
+  {{#each carData}}
   <li><img src="{{this.imag}}" alt="avatar"></li>
-  <li>{{this.carMarque}}</li>
-  <li>{{this.model}}</li>
-  <li>{{this.color}}</li>
-  <li>{{this.year}}</li>
-  <li>{{this.descriptif}}</li>
+  <li>
+    Marque de la voiture : {{this.carMarque}}
+    Model : {{this.model}}
+    Annee : {{this.year}}
+    Descriptif : {{this.descriptif}}</p>
+
+  </li>
+  {{/each}}
 </ul>
-{{/each}}
