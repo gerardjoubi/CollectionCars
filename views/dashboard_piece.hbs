@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+
+<h2>Toutes les pieces</h2>
+
+{{#each pieceData}}
+<ul>
+  <li><img src="{{this.imag}}" alt="avatar"></li>
+  <li>{{this.pieceMarque}}</li>
+  <li>{{this.model}}</li>
+  <li>{{this.genre}}</li>
+  <li>{{this.year}}</li>
+  <li>{{this.descriptif}}</li>
+</ul>
+{{/each}}
