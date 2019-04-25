@@ -1,13 +1,16 @@
 <h3>{{userDoc.username}}</h3>
-<p><a href="/">Acceuille Logo</a>
-  <button id="create-car-form">Form Car</button>
-  <button id="create-piece-form">Form Piece</button></p>
+<button id="create-car-form">Form Car</button>
+<button id="create-piece-form">Form Piece</button></p>
 <h4>Affichage all cars and pieces for one user</h4>
 
 <ul>
   {{#each cars}}
   <li>
-    {{this.model}}
+    <p>Marque de la voiture : {{this.carMarque}}</p>
+    <p>Model : {{this.model}}</p>
+    <p>Annee : {{this.year}}</p>
+
+    <a href="/delete/{{_id}}">Delete x</a>
   </li>
   {{/each}}
 </ul>
@@ -18,6 +21,7 @@
   {{#each pieces}}
   <li>
     {{this.model}}
+    <a href="/deletePiece/{{_id}}">Delete x</a>
   </li>
   {{/each}}
 </ul>

@@ -15,25 +15,8 @@ router.post("/car", (req, res, next) => {
     .create(req.body)
     .then(carData => {
       res.locals.carData = carData;
-      res.redirect("/user_page/" + carData.ownerId);
+      res.redirect("/user_page");
       console.log("CAR ADDED");
-    })
-    .catch(err => next(err));
-});
-//--------------Get user Details----------
-router.get("/user_page/:id", (req, res, next) => {
-  console.log(req.params.id);
-  userModel
-    .findById(req.params.id)
-    .then(userDoc => {
-      console.log(userDoc);
-      carModel.find({ ownerId: userDoc._id }).then(cars => {
-        console.log(cars);
-        pieceModel.find({ ownerId: userDoc._id }).then(pieces => {
-          console.log(pieces);
-          res.render("user_page.hbs", { userDoc, cars, pieces });
-        });
-      });
     })
     .catch(err => next(err));
 });
@@ -55,6 +38,17 @@ router.get("/", (req, res, next) => {
     .then(carData => {
       console.log(carData);
       res.render("index.hbs", { carData });
+    })
+    .catch(err => next(err));
+});
+
+//----------- DELETE A car ------------
+router.get("/delete/:id", (req, res, next) => {
+  carModel
+    .findByIdAndRemove(req.params.id)
+    .then(profileDoc => {
+      console.log("Car deleted");
+      res.redirect("/user_page");
     })
     .catch(err => next(err));
 });

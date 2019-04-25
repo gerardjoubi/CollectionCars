@@ -29,17 +29,18 @@ router.get("/dashboard_piece", (req, res, next) => {
     .find()
     .then(pieceData => {
       console.log(pieceData);
-      res.render("dashboard_piece.hbs", { pieceData });
+      res.render("index.hbs", { pieceData });
     })
     .catch(err => next(err));
 });
 
-router.get("/", (req, res, next) => {
+//-------Delete a Piece--------
+router.get("/deletePiece/:id", (req, res, next) => {
   pieceModel
-    .find()
-    .then(pieceData => {
-      console.log(pieceData);
-      res.render("index.hbs", { pieceData });
+    .findByIdAndRemove(req.params.id)
+    .then(profileDoc => {
+      console.log("Piece deleted");
+      res.redirect("/user_page");
     })
     .catch(err => next(err));
 });
