@@ -75,6 +75,6 @@ authRoutes.get("/logout", (req, res) => {
   res.redirect("/login");
 });
 
-const router = require("./index.js");
+// const router = require("./index.js");
 
 module.exports = authRoutes;

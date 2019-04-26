@@ -56,16 +56,6 @@ router.get("/dashboard_car", (req, res, next) => {
     .catch(err => next(err));
 });
 
-router.get("/", (req, res, next) => {
-  carModel
-    .find()
-    .then(carData => {
-      console.log(carData, "car data aaaaaa");
-      res.render("index.hbs", { carData });
-    })
-    .catch(err => next(err));
-});
-
 //----------- DELETE A car ------------
 router.get("/delete/:id", (req, res, next) => {
   carModel
