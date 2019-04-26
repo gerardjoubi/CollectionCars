@@ -27,8 +27,8 @@ a {
 .main_navigation_bar {
   display: flex;
   width: 100%;
-  height: 60px;
-  background-color: red;
+  height: 80px;
+  background-color: rgb(134, 1, 1);
 }
 
 .nav_Container {
@@ -257,4 +257,26 @@ input {
 img {
   height: 100px;
   width: 100px;
+}
+.logo {
+  height: 70px;
+  width: 180px;
+}
+.liste {
+  display: flex;
+}
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+}
+p {
+  width: 600px;
+  border: 1px;
+  padding: 2px 5px;
+
+  /* Nécessaires pour text-overflow */
+  white-space: nowrap;
+  overflow: hidden;
+}
+h2 {
+  color: rgb(8, 103, 226);
 }

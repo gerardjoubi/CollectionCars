@@ -1,18 +1,25 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<a href="/dashboard_piece">All pieces</a>
+<a href="/dashboard_piece" class="custom_User_btn">All pieces</a>
 
-<h2>Toutes les voitures:</h2>
 
-<ul>
-  {{#each carData}}
-  <li><img src="{{this.imag}}" alt="avatar"></li>
-  <li>
-    Marque de la voiture : {{this.carMarque}}
-    Model : {{this.model}}
-    Annee : {{this.year}}
-    Descriptif : {{this.descriptif}}</p>
+<h2>All Cars of all user</h2>
 
-  </li>
-  {{/each}}
-</ul>
+{{#each carData}}
+<div class="liste">
+  <div>
+    <img src="{{this.imag}}" alt="avatar"></div>
+  <div>
+    <p class="overflow-ellipsis">
+      Marque de la voiture : {{this.carMarque}}
+      <br>
+      Model : {{this.model}}
+      <br>
+      Annee : {{this.year}}<br>
+      Descriptif : {{this.descriptif}}</p>
+
+
+  </div>
+  <p></p>
+</div>
+
+{{/each}}
+</section>

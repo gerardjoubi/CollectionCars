@@ -1,18 +1,22 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-
-
-<h2>Toutes les pieces</h2>
+<h2>All cars Pieces</h2>
 
 <ul>
   {{#each pieceData}}
-  <li>
-    <p><img src="{{this.imag}}" alt="avatar"></p>
-    <p>Piece Marque : {{this.pieceMarque}}</p>
-    <p>Model : {{this.model}}<br>
-      Year : {{this.year}}<br>
-      Descriptif : {{this.descriptif}}</p>
+  <div class="liste">
+    <div>
+      <img src="{{this.imag}}" alt="avatar"></div>
+    <p>
+      <br class="overflow-ellipsis">
+      Piece Marque : {{this.pieceMarque}}
+      </br>
+      Model : {{this.model}}
+      <br>
+      Genre: {{this.genre}}
+      Year : {{this.year}}
+      <br>
+      Descriptif : {{this.descriptif}}
 
-  </li>
+    </p>
+  </div>
   {{/each}}
 </ul>
