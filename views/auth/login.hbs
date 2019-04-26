@@ -3,24 +3,24 @@
     <h2 class="log_Title">Login</h2>
     <form action="/login" method="POST" id="form-container">
       <div class="input_Container">
-        <label for="username">Username:</label>
-        <input type="text" name="username" value="">
+        <label for="username" class="label_log">Username:</label>
+        <input type="text" name="username">
       </div>
       <div class="input_Container">
-        <label for="password">Password:</label>
-        <input type="password" name="password" value="123456">
+        <label for="password" class="label_log">Password:</label>
+        <input type="password" name="password">
       </div>
       {{#if message}}
-      <div class="error-message">{{ message }}</div>
+        <div class="error-message">{{ message }}</div>
       {{/if}}
 
       <div class="lower_Signup">
-        <input class="custom_User_btn login_submit" type="submit" value="Log In">
-        <p class="account-message">
-          You do not have an account ?
-          <a href="/signup">sign up here</a>
-        </p>
-      </div>
+          <input class="custom_User_btn login_submit" type="submit" value="Log In">
+          <p class="account-message">
+            You do not have an account ? 
+            <a href="/signup">sign up here</a>
+          </p>
+        </div>
     </form>
   </div>
 </section>

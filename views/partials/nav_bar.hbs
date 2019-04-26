@@ -3,15 +3,14 @@
         <nav>
             <a href="/"><img src="/images/logo.gif" alt="logo" class="logo"></a>
             {{#unless isLoggedIn}}
-            <a href="/login">Login</a>
-            <a href="/signup">Signup</a>
+            <a class="header_nav_btn" href="/login">Login</a>
+            <a class="header_nav_btn" href="/signup">Signup</a>
             {{/unless}}
             {{#if isLoggedIn}}
-            <a href="/user_page">Profile</a>
-            <a href="/logout">Logout</a>
+            <a class="header_nav_btn" href="/user_page">Profile</a>
+            <a class="header_nav_btn" href="/logout">Logout</a>
             {{/if}}
         </nav>
+
     </div>
-
-
 </section>
