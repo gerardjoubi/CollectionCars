@@ -25,10 +25,7 @@
     "pusher": "^2.2.0",
     "serve-favicon": "^2.5.0"
   },
-  "devDependencies": {
-    "connect-flash": "^0.1.1",
-    "nodemon": "^1.18.11"
-  },
+  "devDependencies": {},
   "engines": {
     "node": "^10.9.0"
   }
