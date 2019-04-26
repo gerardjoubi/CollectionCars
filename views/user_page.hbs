@@ -1,35 +1,58 @@
-<h3>{{userDoc.username}}</h3>
-<button id="create-car-form">Form Car</button>
-<button id="create-piece-form">Form Piece</button></p>
-<h4>Affichage all cars and pieces for one user</h4>
-<h1>CARS</h1>
-<ul>
-  {{#each cars}}
-  <li>
-    <p>
-      <p><img src="{{this.imag}}" alt="avatar"></p>
-      <p>Marque de la voiture : {{this.carMarque}}<br>
-        Model : {{this.model}}<br>
-        Annee : {{this.year}}</p>
-      <p><a href="/delete/{{_id}}">Delete x</a></p>
-  </li>
-  {{/each}}
-</ul>
+<section class="section_User_Container">
 
-<h1>Pieces</h1>
+  <h3 class="user_Intro">Hello <span>{{userDoc.username}}</span>, Good to see you!!</h3>
 
-<ul>
-  {{#each pieces}}
-  <li>
-    <p><img src="{{this.imag}}" alt="avatar"></p>
-    <p>Piece Marque : {{this.pieceMarque}}</p>
-    <p>Model : {{this.model}}<br>
-      Year : {{this.year}}<br>
-      Descriptif : {{this.descriptif}}</p>
-    <p><a href="/deletePiece/{{_id}}">Delete x</a></p>
-  </li>
-  {{/each}}
-</ul>
+  <div class="user_Form_btn">
+    <button id="create-car-form" class="custom_Form_btn">Form Car</button>
+    <button id="create-piece-form"class="custom_Form_btn">Form Piece</button>
+  </div>
+
+
+  <h4 class="little_Space">Here is your garage my dude</h4>
+  <h1 class="little_Space">CARS</h1>
+
+
+    {{#each cars}}
+
+        <div class="model_Container">
+          <img src="{{this.imag}}" alt="avatar">
+
+        <div class="model_Text_Container">
+          <p>
+            Marque de la voiture : {{this.carMarque}}<br>
+            Model : {{this.model}}<br>
+            Annee : {{this.year}}
+          </p>
+        <a href="/delete/{{_id}}">Delete x</a>
+        </div>
+
+        </div>
+
+    {{/each}}
+
+
+  <h1 class="little_Space">Pieces</h1>
+
+    {{#each pieces}}
+
+      <div class="model_Container">
+        <img src="{{this.imag}}" alt="avatar">
+
+      <div class="model_Text_Container">
+        <p>
+          Piece Marque : {{this.pieceMarque}}<br>
+          Model : {{this.model}}<br>
+          Year : {{this.year}}<br>
+          Descriptif : {{this.descriptif}}
+        </p>
+        <a href="/deletePiece/{{_id}}">Delete x</a>
+      </div>
+    {{/each}}
+
+
+</section>
+
+
 
 <!-- The Modal -->
 <div id="modal-car" class="modal">
@@ -40,32 +63,51 @@
     <h2 class="title">Create a new Car</h2>
 
     <form method="post" enctype="multipart/form-data" action="/car" id="form_create_car" class="form">
-      <label for="marque">Marque</label>
-      <input id="marque" type="text" value="foo" name="carMarque" required>
-      <label for="model">Model</label>
-      <input id="model" type="text" value="bar" name="model" required>
-      <label for="color">color</label>
-      <input id="color" type="text" value="bar" name="color" required>
 
-      <label for="year">Year</label>
-      <input id="year" type="number" value="1937" name="year" required>
+      <div class="input_Container">
+        <label for="marque" class="label_log">Marque</label>
+        <input id="marque" type="text" value="foo" name="carMarque" required>
+      </div>
 
-      <label for="descriptif">Tell us your descriptif :</label>
+      <div class="input_Container">
+        <label for="model"class="label_log">Model</label>
+        <input id="model" type="text" value="bar" name="model" required>
+      </div>
 
-      <textarea id="descriptif" name="descriptif" rows="5" cols="33">
-IMPORTANT : 
-TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
-MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
-NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
-Spécialiste.
-</textarea>
+      <div class="input_Container">
+        <label for="color"class="label_log">color</label>
+        <input id="color" type="text" value="bar" name="color" required>
+      </div>
 
-      <label for="image">Image</label>
-      <input id="image" type="file" value="image" name="imag"></input>
+      <div class="input_Container">
+        <label for="year"class="label_log">Year</label>
+        <input id="year" type="number" value="1937" name="year" required>
+      </div>
 
-      <label for="image"></label>
-      <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
-      <button id="btn_create_user" class="btn">Create</button>
+      <div class="input_Container">
+        <label for="descriptif"class="label_log">Tell us your descriptif :</label>
+        <textarea id="descriptif" name="descriptif" rows="5" cols="33">
+          IMPORTANT : 
+          TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
+          MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
+          NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
+          Spécialiste.
+        </textarea>
+      </div>
+
+      <div class="input_Container">
+        <label for="image"class="label_log">Image</label>
+        <input id="image" type="file" value="image" name="imag"></input>
+      </div>
+
+      <div class="input_Container">
+        <label for="image"class="label_log"></label>
+        <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
+      </div>
+
+      <button id="btn_create_user" class="btn custom_User_btn">Create</button>
+
+
     </form>
   </div>
 
@@ -79,39 +121,51 @@ Spécialiste.
 
 
     <form method="post" action="/piece" id="form_create_piece" class="form">
-      <label for="marque">Piece Marque</label>
-      <input id="marque" type="text" value="foo" name="pieceMarque" required>
 
-      <label for="model">Model</label>
-      <input id="model" type="text" value="foo" name="model" required>
+      <div class="input_Container">
+        <label for="marque"class="label_log">Piece Marque</label>
+        <input id="marque" type="text" value="foo" name="pieceMarque" required>
+      </div>
 
-      <label for="genre">Genre</label>
-      <input id="genre" type="text" value="bar" name="genre" required>
+      <div class="input_Container">
+        <label for="model"class="label_log">Model</label>
+        <input id="model" type="text" value="foo" name="model" required>
+      </div>
 
-      <label for="year">Year</label>
-      <input id="year" type="number" value="1998" name="year" required>
+      <div class="input_Container">
+        <label for="genre"class="label_log">Genre</label>
+        <input id="genre" type="text" value="bar" name="genre" required>
+      </div>
 
-      <label for="descriptif">Tell us your descriptif :</label>
+      <div class="input_Container">
+        <label for="year"class="label_log">Year</label>
+        <input id="year" type="number" value="1998" name="year" required>
+      </div>
 
-      <textarea id="descriptif" name="descriptif" rows="5" cols="33">
-IMPORTANT : 
-TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
-MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
-NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
-Spécialiste.
-</textarea>
-      <label for="image">Image</label>
-      <input id="image" type="file" value="image" name="imag"></input>
-      {{!-- the name comes from the index.js file --}}
-      {{!-- type file is needed for it to work --}}
+      <div class="input_Container">
+        <label for="descriptif"class="label_log">Tell us your descriptif :</label>
+        <textarea id="descriptif" name="descriptif" rows="5" cols="33">
+          IMPORTANT : 
+          TOUS LES TECHNICIENS, BONS OU MAUVAIS SAVENT LE FAIRE SANS DEMONTAGE EVIDEMMENT.
+          MAIS SEULS LES MEILLEURS ET CEUX QUI SONT EXPÉRIMENTÉS LE FONT DANS LES RÈGLES DE L'ART AVEC DEMONTAGE. 
+          NOUS MAITRISONS , EN TANT QUE PROFESSIONNEL SPECIALISE, CETTE TECHNIQUE DE POSE.
+          Spécialiste.
+        </textarea>
+      </div>
 
+      <div class="input_Container">
+        <label for="image"class="label_log">Image</label>
+        <input id="image" type="file" value="image" name="imag"></input>
+        {{!-- the name comes from the index.js file --}}
+        {{!-- type file is needed for it to work --}}
+      </div>
 
-      <label for="image"></label>
-      <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
-      <button id="btn_create_user" class="btn">Create</button>
+      <div class="input_Container">
+        <label for="image"class="label_log"></label>
+        <input id="ownerId" type="hidden" value="{{userDoc._id}}" name="ownerId"></input>
+      </div>
 
-
-
+      <button id="btn_create_user" class="btn custom_User_btn">Create</button>
 
 
     </form>

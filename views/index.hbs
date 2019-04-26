@@ -1,18 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<a href="/dashboard_piece">All pieces</a>
+<section class="section_Home_Container">
+  <h1>Welcome to Collection Cars</h1>
+  <p>The Only Collection Cars Website</p>
+  <a href="/dashboard_piece">All pieces</a>
 
-<h2>Toutes les voitures:</h2>
+  <h2>Toutes les voitures:</h2>
 
-<ul>
-  {{#each carData}}
-  <li><img src="{{this.imag}}" alt="avatar"></li>
-  <li>
-    Marque de la voiture : {{this.carMarque}}
-    Model : {{this.model}}
-    Annee : {{this.year}}
-    Descriptif : {{this.descriptif}}</p>
+  
+    {{#each carData}}
+      <div class="model_Container">
+      <img src="{{this.imag}}" alt="avatar">
+      <div class="model_Text_Container">
+        <span>
+          Marque de la voiture : {{this.carMarque}}
+        </span>
+        <span>
+          Model : {{this.model}}
+        </span>
+        <span>
+          Annee : {{this.year}}
+        </span>
+        <span>
+          Descriptif : {{this.descriptif}}
+        </span>
+      </div>
+      </div>
 
-  </li>
-  {{/each}}
-</ul>
+    {{/each}}
+</section>
