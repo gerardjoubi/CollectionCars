@@ -3,17 +3,20 @@
 /*///////////////////////////////////////////////////////*/
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+}
 
 /*///////////////////////////////////////////////////////*/
 /*////////////////// GENERAL SETTINGS ///////////////////*/
 /*///////////////////////////////////////////////////////*/
 body {
-  font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif; }
+  font: 1rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
 
 a {
   color: #00b7ff;
-  text-decoration: none; }
+  text-decoration: none;
+}
 
 /*///////////////////////////////////////////////////////*/
 /*///////////////////// NAV  SETTINGS ///////////////////*/
@@ -22,33 +25,39 @@ a {
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: red; }
+  background-color: rgb(134, 0, 0);
+}
 
 .nav_Container {
   width: 100%;
   height: 100%;
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+}
 
 .logo_Container {
-  background-color: green;
+  background-color: rgb(0, 114, 0);
   width: 180px;
-  height: 100%; }
+  height: 100%;
+}
 
 .login_bar {
   display: flex;
   align-items: center;
   width: 115px;
   justify-content: space-around;
-  padding-right: 20px; }
+  padding-right: 20px;
+}
 
 .log_button {
   height: 100%;
   display: flex;
-  align-items: center; }
+  align-items: center;
+}
 
 .log_button:hover {
-  background-color: orange; }
+  background-color: orange;
+}
 
 /*///////////////////////////////////////////////////////*/
 /*/////////////////// FOOTER  SETTINGS //////////////////*/
@@ -58,14 +67,16 @@ footer {
   color: white;
   height: 75px;
   display: flex;
-  position: relative; }
+  position: relative;
+}
 
 .footer_Container {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  justify-content: center; }
+  justify-content: center;
+}
 
 /*///////////////////////////////////////////////////////*/
 /*//////////////// SIGN UP FORM SETTINGS ////////////////*/
@@ -76,17 +87,20 @@ footer {
   width: 64%;
   height: 100%;
   margin: 50px auto;
-  align-items: center; }
+  align-items: center;
+}
 
 .outline_Container {
   display: flex;
   flex-direction: column;
   background-color: rgba(211, 211, 211, 0.6);
   border-radius: 25px;
-  align-items: center; }
+  align-items: center;
+}
 
 #form-container {
-  margin: 20px; }
+  margin: 20px;
+}
 
 label {
   color: #b4886b;
@@ -94,32 +108,43 @@ label {
   display: block;
   width: 150px;
   float: left;
-  padding-top: 5px; }
+  padding-top: 5px;
+}
 
 input {
   width: 180px;
   height: 25px;
   border: 1px solid;
   border-radius: 0.3rem;
-  margin-bottom: 8px; }
+  margin-bottom: 8px;
+}
 
 .input_Container {
-  margin: 20px; }
+  margin: 20px;
+}
 
 .log_Title {
-  margin: 20px; }
+  margin: 20px;
+}
 
 .lower_Signup {
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+}
 
 .custom_User_btn {
   margin: 20px auto;
   -moz-box-shadow: 0px 1px 0px 0px #fff6af;
   -webkit-box-shadow: 0px 1px 0px 0px #fff6af;
   box-shadow: 0px 1px 0px 0px #fff6af;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #ffec64),
+    color-stop(1, #ffab23)
+  );
   background: -moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
   background: -webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
   background: -o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
@@ -139,25 +164,35 @@ input {
   font-weight: bold;
   padding: 6px 24px;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #ffee66; }
+  text-shadow: 0px 1px 0px #ffee66;
+}
 
 .custom_User_btn:hover {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    color-stop(0.05, #ffab23),
+    color-stop(1, #ffec64)
+  );
   background: -moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
   background: -webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
   background: -o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
   background: -ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
   background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64',GradientType=0);
-  background-color: #ffab23; }
+  background-color: #ffab23;
+}
 
 .custom_User_btn:active {
   position: relative;
-  top: 1px; }
+  top: 1px;
+}
 
 .login_submit {
   padding: 0;
-  width: 100px; }
+  width: 100px;
+}
 
 /*///////////////////////////////////////////////////////*/
 /*//////////////// LOG IN FORM SETTINGS /////////////////*/
@@ -184,7 +219,8 @@ input {
   background-color: black;
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */ }
+  /* Black w/ opacity */
+}
 
 /* Modal Content/Box */
 .modal-content {
@@ -194,24 +230,28 @@ input {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */ }
+  /* Could be more or less, depending on screen size */
+}
 
 /* The Close Button */
 .close {
   color: #aaa;
   float: right;
   font-size: 28px;
-  font-weight: bold; }
+  font-weight: bold;
+}
 
 .close:hover,
 .close:focus {
   color: black;
   text-decoration: none;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=style.css.map */
 img {
   height: 100px;
-  width: 100px; }
+  width: 100px;
+}
 
 /*# sourceMappingURL=style.css.map */

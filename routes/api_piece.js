@@ -2,6 +2,8 @@ const express = require("express");
 const router = new express.Router();
 const pieceModel = require("../models/piece");
 const fileUploader = require("../config/cloudinaryConfig");
+const userModel = require("../models/users");
+
 // ------------------------------------------------------
 // creat piece
 // -------------------------------------------------------
@@ -35,7 +37,7 @@ router.get("/dashboard_piece", (req, res, next) => {
   pieceModel
     .find()
     .then(pieceData => {
-      console.log(pieceData);
+      console.log("yo", pieceData);
       res.render("dashboard_piece.hbs", { pieceData });
     })
     .catch(err => next(err));
