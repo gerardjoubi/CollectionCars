@@ -61,6 +61,16 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  if (req.path === "/favicon.ico") {
+    console.log("Favicon blocked...");
+    return res.send(
+      "Blocking favicon to not create more sessions... Implement code for handling favicons."
+    );
+  }
+  next();
+});
+
 function checkloginStatus(req, res, next) {
   res.locals.isLoggedIn = req.isAuthenticated();
   res.locals.user = req.user;
